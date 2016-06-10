@@ -1,10 +1,8 @@
 import ffi from 'ffi'
 
-var libgohttp = ffi.DynamicLibrary('libgohttp.so')
+var libgohttp = ffi.DynamicLibrary('libgohttp.so'),
+    p_listenAndServe = libgohttp.get('ListenAndServe')
 
-export function run() {
-  var p_listenAndServe = libgohttp.get('ListenAndServe'),
-      listenAndServe = ffi.ForeignFunction( p_listenAndServe, "void", ["string"])
-  listenAndServe(":8000")
-  console.log(listenAndServe)
+export function run(...args) {
+  return ffi.ForeignFunction( p_listenAndServe, "void", ["string"])(args[0])
 }

@@ -2,4 +2,4 @@
 
 const gohttp = require('./lib/gohttp')
 
-gohttp.run()
+gohttp.run(':8000')
