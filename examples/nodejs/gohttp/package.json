@@ -1,0 +1,23 @@
+{
+  "name": "gohttp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/gohttp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run compile",
+    "lint": "eslint src",
+    "compile": "babel src --modules common --out-dir lib",
+    "watch": "babel src --watch --modules common --out-dir lib --source-maps"
+  },
+  "author": "Matias Insaurralde <matias@insaurral.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0"
+  }
+}
